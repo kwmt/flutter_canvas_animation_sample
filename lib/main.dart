@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_canvas_animation/circle/circle.dart';
 import 'package:flutter_canvas_animation/cross/cross.dart';
 
 import 'cross/cross_painter.dart';
@@ -37,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: AspectRatio(
             aspectRatio: 1.0,
-            child: Container(padding: EdgeInsets.all(12), child: Cross())),
+            child: Container(padding: EdgeInsets.all(12), child: Circle())),
       ),
     );
   }
