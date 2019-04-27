@@ -7,8 +7,15 @@ class Cross extends StatefulWidget {
 }
 
 class _CrossState extends State<Cross> {
+
+  double _fraction = 0.0;
+
+  @override
+  void initState() {
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(painter: CrossPainter());
+    return CustomPaint(painter: CrossPainter(_fraction));
   }
 }

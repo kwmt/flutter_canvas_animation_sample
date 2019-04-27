@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 class CrossPainter extends CustomPainter {
   Paint _paint;
 
-  CrossPainter() {
+  double _fraction;
+
+  CrossPainter(this._fraction) {
     _paint = Paint()
       ..color = Colors.blue
       ..strokeWidth = 10.0
