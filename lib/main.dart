@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'cross/cross.dart';
+import 'cross/cross_painter.dart';
 
 void main() => runApp(MyApp());
 
