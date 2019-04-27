@@ -12,9 +12,8 @@ class CrossPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print(size);
-    var rect = Offset(0, 0) & size;
-    canvas.drawRect(rect, _paint);
+    canvas.drawLine(Offset(0, 0), Offset(size.width, size.height), _paint);
+    canvas.drawLine(Offset(0, size.height), Offset(size.width, 0), _paint);
   }
 
   @override
