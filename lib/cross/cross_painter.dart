@@ -14,12 +14,15 @@ class CrossPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawLine(Offset(0, 0), Offset(size.width, size.height), _paint);
-    canvas.drawLine(Offset(0, size.height), Offset(size.width, 0), _paint);
+    print("paint $_fraction");
+    canvas.drawLine(Offset(0, 0),
+        Offset(size.width * _fraction, size.height * _fraction), _paint);
+    canvas.drawLine(Offset(size.width, 0),
+        Offset(size.width - size.width * _fraction, size.height * _fraction), _paint);
   }
 
   @override
-  bool shouldRepaint(CustomPainter oldDelegate) {
-    return true;
+  bool shouldRepaint(CrossPainter oldDelegate) {
+    return oldDelegate._fraction != _fraction;
   }
 }
