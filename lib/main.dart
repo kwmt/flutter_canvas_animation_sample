@@ -35,7 +35,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: AspectRatio(
-            aspectRatio: 1.0, child: CustomPaint(painter: CrossPainter())),
+            aspectRatio: 1.0,
+            child: Container(
+              padding: EdgeInsets.all(12),
+                child: CustomPaint(painter: CrossPainter()))),
       ),
     );
   }
