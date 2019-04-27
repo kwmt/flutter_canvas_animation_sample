@@ -14,8 +14,6 @@ class CrossPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    print("paint $_fraction");
-
     double leftFraction;
     double rightFraction;
 

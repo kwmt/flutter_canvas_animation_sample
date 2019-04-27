@@ -20,7 +20,6 @@ class _CrossState extends State<Cross> with SingleTickerProviderStateMixin {
         AnimationController(duration: const Duration(seconds: 2), vsync: this);
     _animation = Tween<double>(begin: 0.0, end: 1.0).animate(_controller)
       ..addListener(() {
-        print(_animation.value);
         setState(() {
           _fraction = _animation.value;
         });
