@@ -29,11 +29,13 @@ class CrossPainter extends CustomPainter {
 
     canvas.drawLine(Offset(0, 0),
         Offset(size.width * leftFraction, size.height * leftFraction), _paint);
-    canvas.drawLine(
-        Offset(size.width, 0),
-        Offset(size.width - size.width * rightFraction,
-            size.height * rightFraction),
-        _paint);
+    if (_fraction >= .5) {
+      canvas.drawLine(
+          Offset(size.width, 0),
+          Offset(size.width - size.width * rightFraction,
+              size.height * rightFraction),
+          _paint);
+    }
   }
 
   @override
