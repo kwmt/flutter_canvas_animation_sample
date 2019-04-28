@@ -29,6 +29,12 @@ class _LineState extends State<Line> with SingleTickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomPaint(painter: LinePainter(_fraction));
   }

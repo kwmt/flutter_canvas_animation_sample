@@ -29,6 +29,12 @@ class _CrossState extends State<Cross> with SingleTickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomPaint(painter: CrossPainter(_fraction));
   }

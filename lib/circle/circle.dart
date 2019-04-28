@@ -29,6 +29,12 @@ class _CircleState extends State<Circle> with SingleTickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return CustomPaint(painter: CirclePainter(_fraction));
   }
