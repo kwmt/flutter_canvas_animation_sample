@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class LinePainter extends CustomPainter {
@@ -17,8 +15,7 @@ class LinePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawLine(
-        Offset(0, 0), Offset(size.width * _fraction, 0), _paint);
+    canvas.drawLine(Offset(0, 0), Offset(size.width * _fraction, 0), _paint);
   }
 
   @override
