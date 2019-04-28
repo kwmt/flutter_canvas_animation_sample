@@ -14,7 +14,7 @@ class _LineCircleState extends State<LineCircle> {
   void initState() {
     super.initState();
     var circle = Stack(
-      children: <Widget>[_build(Circle()), _build(Center(child: (Text("1"))))],
+      children: <Widget>[_build(Circle()), _build(Center(child: Text("1")))],
     );
 
     children.add(_build(Line(completion: () {
