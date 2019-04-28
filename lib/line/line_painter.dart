@@ -15,7 +15,8 @@ class LinePainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.drawLine(Offset(0, 0), Offset(size.width * _fraction, 0), _paint);
+    canvas.drawLine(
+        Offset(0, size.height / 2), Offset(size.width * _fraction, size.height / 2), _paint);
   }
 
   @override
