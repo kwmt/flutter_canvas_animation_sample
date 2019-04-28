@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_canvas_animation/circle/circle.dart';
+import 'package:flutter_canvas_animation/cross/cross.dart';
 import 'package:flutter_canvas_animation/line/line.dart';
+import 'package:flutter_canvas_animation/shape.dart';
+import 'package:flutter_canvas_animation/shape_screen.dart';
 
 void main() => runApp(MyApp());
 
@@ -16,27 +20,45 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+final List<Shape> _shpaeScreens = [
+  Shape("Line", Line()),
+  Shape("Crosse", Cross()),
+  Shape("Circle", Circle())
+];
 
+class MyHomePage extends StatelessWidget {
   final String title;
 
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
+  MyHomePage({this.title});
 
-class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(widget.title),
+        title: Text(title),
       ),
       body: Center(
-        child: AspectRatio(
-            aspectRatio: 1.0,
-            child: Container(padding: EdgeInsets.all(12), child: Line())),
+        child: _buildList(),
       ),
     );
+  }
+
+  ListView _buildList() {
+    return ListView.builder(
+      itemCount: _shpaeScreens.length,
+        itemBuilder: (BuildContext context, int index) {
+      return ListTile(
+          title: Text(_shpaeScreens[index].title),
+          onTap: () => _onTapListItem(context, index));
+    });
+  }
+
+  void _onTapListItem(BuildContext context, int index) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            settings: RouteSettings(name: _shpaeScreens[index].title),
+            builder: (BuildContext context) =>
+                ShapeScreen(shape: _shpaeScreens[index])));
   }
 }
