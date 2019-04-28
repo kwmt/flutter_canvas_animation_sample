@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_canvas_animation/circle/circle_painter.dart';
 
+// ignore: must_be_immutable
 class Circle extends StatefulWidget {
   int milliseconds;
 
-  Circle({this.milliseconds = 2000});
+  final VoidCallback completion;
+
+  Circle({this.milliseconds = 2000, this.completion});
 
   @override
   _CircleState createState() => _CircleState();
@@ -26,6 +29,9 @@ class _CircleState extends State<Circle> with SingleTickerProviderStateMixin {
       ..addListener(() {
         setState(() {
           _fraction = _animation.value;
+          if (_animation.value == 1.0) {
+            widget.completion();
+          }
         });
       });
 
