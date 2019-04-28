@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_canvas_animation/line/line_painter.dart';
 
 class Line extends StatefulWidget {
+  final VoidCallback completion;
+
+  const Line({Key key, this.completion}) : super(key: key);
+
   @override
   _LineState createState() => _LineState();
 }
@@ -22,6 +26,9 @@ class _LineState extends State<Line> with SingleTickerProviderStateMixin {
       ..addListener(() {
         setState(() {
           _fraction = _animation.value;
+          if( _animation.value == 1.0) {
+            widget.completion();
+          }
         });
       });
 

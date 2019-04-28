@@ -8,12 +8,29 @@ class LineCircle extends StatefulWidget {
 }
 
 class _LineCircleState extends State<LineCircle> {
+  List<Widget> children = List();
+
+  @override
+  void initState() {
+    super.initState();
+    var circle = _build(Circle());
+
+    children.add(_build(Line(completion: () {
+      setState(() {
+        children.add(circle);
+      });
+    })));
+  }
+
   @override
   Widget build(BuildContext context) {
-    return AspectRatio(
-        aspectRatio: 1.0,
-        child: Container(
-            padding: EdgeInsets.all(12),
-            child: Row(children: <Widget>[Line(), Circle()])));
+    return Container(
+        padding: EdgeInsets.all(12),
+        alignment: Alignment.center,
+        child: Row(children: children));
+  }
+
+  Widget _build(Widget widget) {
+    return SizedBox(width: 100, height: 100, child: Container(child: widget));
   }
 }
