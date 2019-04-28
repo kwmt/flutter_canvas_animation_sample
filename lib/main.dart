@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_canvas_animation/circle/circle.dart';
 import 'package:flutter_canvas_animation/line/line.dart';
 
 void main() => runApp(MyApp());

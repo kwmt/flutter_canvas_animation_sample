@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_canvas_animation/circle/circle_painter.dart';
 import 'package:flutter_canvas_animation/line/line_painter.dart';
 
 class Line extends StatefulWidget {
