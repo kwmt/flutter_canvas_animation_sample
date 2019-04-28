@@ -8,7 +8,12 @@ class Line extends StatefulWidget {
   double x;
   double y;
 
-  Line({Key key, this.x = 0, this.y = 0, this.milliseconds = 2000, this.completion})
+  Line(
+      {Key key,
+      this.x = 0,
+      this.y = 0,
+      this.milliseconds = 2000,
+      this.completion})
       : super(key: key);
 
   @override
@@ -33,8 +38,9 @@ class _LineState extends State<Line> with SingleTickerProviderStateMixin {
           print(_animation.value);
           _fraction = _animation.value;
           if (_animation.value == 1.0) {
-//            _controller.re
-            widget.completion();
+            if (widget.completion != null) {
+              widget.completion();
+            }
           }
         });
       });
@@ -50,6 +56,7 @@ class _LineState extends State<Line> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(painter: LinePainter(_fraction, x: widget.x, y: widget.y));
+    return CustomPaint(
+        painter: LinePainter(_fraction, x: widget.x, y: widget.y));
   }
 }

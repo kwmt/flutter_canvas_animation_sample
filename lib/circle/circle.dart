@@ -7,7 +7,8 @@ class Circle extends StatefulWidget {
 
   final VoidCallback completion;
 
-  Circle({this.milliseconds = 2000, this.completion});
+  Circle({Key key, this.milliseconds = 2000, this.completion})
+      : super(key: key);
 
   @override
   _CircleState createState() => _CircleState();

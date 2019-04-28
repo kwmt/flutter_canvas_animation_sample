@@ -16,12 +16,11 @@ class _LineCircleState extends State<LineCircle> {
     var circle = Stack(
       children: <Widget>[
         _build(Circle(
-          milliseconds: 1000,
+          milliseconds: 500,
           completion: () {
             setState(() {
-              children.add(Line(x: 200));
+              children.add(_build(Line(milliseconds: 500, x: 0)));
             });
-
           },
         )),
         _build(Center(
@@ -31,7 +30,7 @@ class _LineCircleState extends State<LineCircle> {
     );
 
     children.add(_build(Line(
-        milliseconds: 1000,
+        milliseconds: 500,
         completion: () {
           setState(() {
             children.add(circle);
