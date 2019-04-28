@@ -18,7 +18,7 @@ class CirclePainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var rect = Offset(0, 0) & size;
-    canvas.drawArc(rect, -pi / 2, pi * 2 * _fraction, false, _paint);
+    canvas.drawArc(rect, pi, pi * 2 * _fraction, false, _paint);
   }
 
   @override
