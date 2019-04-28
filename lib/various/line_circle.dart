@@ -16,9 +16,11 @@ class _LineCircleState extends State<LineCircle> {
     var circle = Stack(
       children: <Widget>[
         _build(Circle(
-          milliseconds: 1000,
+          milliseconds: 500,
         )),
-        _build(Center(child: Text("1")))
+        _build(Center(
+            child: Text("1",
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold))))
       ],
     );
 
@@ -40,6 +42,6 @@ class _LineCircleState extends State<LineCircle> {
   }
 
   Widget _build(Widget widget) {
-    return SizedBox(width: 100, height: 100, child: Container(child: widget));
+    return SizedBox(width: 50, height: 50, child: Container(child: widget));
   }
 }
