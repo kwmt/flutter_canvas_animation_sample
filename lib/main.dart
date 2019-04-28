@@ -4,6 +4,7 @@ import 'package:flutter_canvas_animation/cross/cross.dart';
 import 'package:flutter_canvas_animation/line/line.dart';
 import 'package:flutter_canvas_animation/shape.dart';
 import 'package:flutter_canvas_animation/shape_screen.dart';
+import 'package:flutter_canvas_animation/various/line_circle.dart';
 
 void main() => runApp(MyApp());
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
 final List<Shape> _shpaeScreens = [
   Shape("Line", Line()),
   Shape("Crosse", Cross()),
-  Shape("Circle", Circle())
+  Shape("Circle", Circle()),
+  Shape("LineCircle", LineCircle()),
 ];
 
 class MyHomePage extends StatelessWidget {
