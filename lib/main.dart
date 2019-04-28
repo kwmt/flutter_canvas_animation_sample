@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_canvas_animation/circle/circle.dart';
+import 'package:flutter_canvas_animation/line/line.dart';
 
 void main() => runApp(MyApp());
 
@@ -35,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: AspectRatio(
             aspectRatio: 1.0,
-            child: Container(padding: EdgeInsets.all(12), child: Circle())),
+            child: Container(padding: EdgeInsets.all(12), child: Line())),
       ),
     );
   }
